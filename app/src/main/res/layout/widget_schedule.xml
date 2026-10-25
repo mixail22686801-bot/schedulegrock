@@ -4,56 +4,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:padding="10dp"
+    android:padding="12dp"
     android:background="#1E88E5">
 
-    <!-- Left side: current status -->
+    <!-- Левая часть: текущий статус -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1.4"
+        android:layout_weight="3"
         android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/tv_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Пн"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/tv_status"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-
-            <TextView
-                android:id="@+id/tv_day"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Пн"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF" />
-
-            <TextView
-                android:id="@+id/tv_status"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="end"
-                android:text="Урок"
-                android:textSize="13sp"
-                android:textColor="#FFEB3B" />
-
-            <ImageView
-                android:id="@+id/btn_refresh"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@android:drawable/ic_popup_sync"
-                android:layout_marginStart="6dp"
-                android:contentDescription="Обновить" />
-        </LinearLayout>
+            android:text="Урок"
+            android:textSize="12sp"
+            android:textColor="#FFEB3B"
+            android:layout_marginTop="2dp" />
 
         <TextView
             android:id="@+id/tv_current_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Математика"
-            android:textSize="18sp"
+            android:textSize="17sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
             android:layout_marginTop="6dp"
@@ -65,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="09:00 – 09:45"
-            android:textSize="13sp"
+            android:textSize="12sp"
             android:textColor="#E3F2FD"
             android:layout_marginTop="2dp" />
 
@@ -74,7 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="осталось 23 мин"
-            android:textSize="14sp"
+            android:textSize="13sp"
             android:textColor="#FFEB3B"
             android:layout_marginTop="4dp" />
 
@@ -82,58 +66,50 @@
             android:id="@+id/progress_bar"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="6dp"
+            android:layout_height="8dp"
             android:layout_marginTop="6dp"
             android:max="100"
             android:progress="40"
-            android:progressTint="#FFEB3B"
-            android:progressBackgroundTint="#80FFFFFF" />
+            android:indeterminate="false" />
 
-        <LinearLayout
-            android:id="@+id/next_container"
+        <TextView
+            android:id="@+id/tv_next_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp">
+            android:text="Следующий:"
+            android:textSize="11sp"
+            android:textColor="#BBDEFB"
+            android:layout_marginTop="8dp" />
 
-            <TextView
-                android:id="@+id/tv_next_label"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Следующий:"
-                android:textSize="12sp"
-                android:textColor="#BBDEFB" />
+        <TextView
+            android:id="@+id/tv_next_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Физика (10:00)"
+            android:textSize="13sp"
+            android:textColor="#FFFFFF"
+            android:maxLines="1"
+            android:ellipsize="end" />
 
-            <TextView
-                android:id="@+id/tv_next_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Физика (10:00)"
-                android:textSize="14sp"
-                android:textColor="#FFFFFF"
-                android:maxLines="1"
-                android:ellipsize="end" />
-        </LinearLayout>
     </LinearLayout>
 
-    <!-- Divider -->
-    <View
+    <!-- Разделитель -->
+    <FrameLayout
         android:layout_width="1dp"
         android:layout_height="match_parent"
-        android:background="#40FFFFFF"
-        android:layout_marginHorizontal="8dp" />
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="#40FFFFFF" />
 
-    <!-- Right side: list of lessons -->
+    <!-- Правая часть: список -->
     <TextView
         android:id="@+id/tv_side_list"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:text="1. Математика\n   09:00–09:45"
+        android:layout_weight="2"
+        android:text="1. Математика"
         android:textSize="11sp"
         android:textColor="#FFFFFF"
-        android:lineSpacingExtra="2dp"
-        android:gravity="top"
-        android:fontFamily="monospace" />
+        android:gravity="top" />
 
 </LinearLayout>
